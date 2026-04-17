@@ -54,6 +54,32 @@
       color: #b0a090;
       letter-spacing: 0.1em;
     }
+
+    .sloth-btn {
+      margin-top: 32px;
+      padding: 12px 28px;
+      background-color: #c8b89a;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-family: 'Georgia', serif;
+      cursor: pointer;
+      letter-spacing: 0.1em;
+      transition: background-color 0.3s;
+    }
+
+    .sloth-btn:hover {
+      background-color: #a8987a;
+    }
+
+    .sloth-img {
+      margin-top: 28px;
+      display: none;
+      width: 280px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    }
   </style>
 </head>
 <body>
@@ -62,6 +88,9 @@
     <div class="line"></div>
     <p>서두르지 않아도 괜찮아요.<br>오늘 하루도 천천히, 나답게.</p>
     <div class="time" id="time"></div>
+    <button class="sloth-btn" onclick="showSloth()">🦥 나무늘보 보기</button>
+    <br>
+    <img class="sloth-img" id="slothImg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Bradypus.jpg/400px-Bradypus.jpg" alt="나무늘보">
   </div>
 
   <script>
@@ -72,6 +101,11 @@
     }
     updateTime();
     setInterval(updateTime, 1000);
+
+    function showSloth() {
+      const img = document.getElementById('slothImg');
+      img.style.display = img.style.display === 'inline' ? 'none' : 'inline';
+    }
   </script>
 </body>
 </html>
