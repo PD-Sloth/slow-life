@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>slow life</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f5f0e8;
+      color: #3a3a3a;
+      font-family: 'Georgia', serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: normal;
+      letter-spacing: 0.3em;
+      color: #5a5a5a;
+      margin-bottom: 20px;
+    }
+
+    .line {
+      width: 60px;
+      height: 1px;
+      background-color: #b0a090;
+      margin: 0 auto 24px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 2;
+      color: #7a7a7a;
+      max-width: 400px;
+    }
+
+    .time {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #b0a090;
+      letter-spacing: 0.1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>slow life</h1>
+    <div class="line"></div>
+    <p>서두르지 않아도 괜찮아요.<br>오늘 하루도 천천히, 나답게.</p>
+    <div class="time" id="time"></div>
+  </div>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      const options = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      document.getElementById('time').textContent = now.toLocaleTimeString('ko-KR', options);
+    }
+    updateTime();
+    setInterval(updateTime, 1000);
+  </script>
+</body>
+</html>
